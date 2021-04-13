@@ -29,7 +29,7 @@ En general el código está estructurado siguiendo la idea de:
 `datos\domain`[`estado` + `entrada`] => `transformación` =>  `salida`
 
 
-Datos\Domain:
+### Datos\Domain:
  Hasta el momento en inglés (la mayoría de la información es de wikipedia u otras páginas de internet).
 
 ``` javascript
@@ -44,7 +44,7 @@ const STATE_DATA = {
    },
 ``` 
 
-- Entrada de usuario:
+### Entrada de usuario:
 
    Teclado (principalmente las flechas)
 
@@ -59,10 +59,11 @@ const STATE_DATA = {
  });
 ```
 
-- La tabla de transición  describe:
- - El `estado` actual
- - La `entrada` que produce la transición (al siguiente estado válido) 
- - El `siguiente estado` 
+### La tabla de transición  describe:
+
+- El `estado` actual
+- La `entrada` que produce la transición (al siguiente estado válido) 
+- El `siguiente estado` 
 
 ``` javascript
 // js/statetransitiontable.js
@@ -102,7 +103,7 @@ id: ndm
 `;
 ```
 
-- Efectos secundarios (`transformación`):
+### Efectos secundarios (`transformación`):
 
    Los efectos secundarios son ejecutados por el interprete (biblioteca xstate), la función showFn (actualiza el diagrama) y la función fmt (actualiza la página): 
 
