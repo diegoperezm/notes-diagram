@@ -1,0 +1,75 @@
+html {
+ width: 100%;
+ height: 100%;
+}
+
+body {
+ font: 300 14px 'Helvetica Neue', Helvetica;
+ height: 100%;
+ overflow-y: hidden;
+}
+
+.content {
+ border: 1px solid black;
+ margin: 2.5% 2%;
+ height: 80%;
+}
+
+.graph{
+  border-right: 3px dashed black;
+  min-width: 100%;
+  width: 100%;
+}
+
+#text-description {
+ margin-top: 10%;
+ padding: 5%;
+ border: 1px solid black;
+}
+
+.node rect {
+  stroke: #333;
+  fill: #fff;
+}
+
+.edgePath path {
+  stroke: #333;
+  fill: #333;
+  stroke-width: 3px;
+}
+
+.active {
+  stroke: red!important; 
+}
+
+.bar {
+  height: 1%;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+
+#state-table[data-state="graph-only"] {
+    display: none;
+}
+
+img {
+	width:  70%;
+	height: 70%;
+}
+
+#display[data-state="BOXPLOT"] {
+	  margin-top: 50px;
+		height: 90%;
+		width:  100%;
+    background-image: url("../img/boxplot-anatomy.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: 100%; 
+}
+
+
+
+
+
+
