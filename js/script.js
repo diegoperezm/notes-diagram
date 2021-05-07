@@ -8,10 +8,8 @@
 
    const { Machine,  interpret, assign } = XState;
 
-   const tableState       = document.getElementById("table__state");
-   const tableData        = document.getElementById("table__data");
-   const display          = document.getElementById("display");
-   const textDescription  = document.getElementById("text-description");
+   const display      = document.getElementById("display");
+   const textContent  = document.getElementById("text-content");
 
    const left  = document.getElementById("left");
    const up    = document.getElementById("up");
@@ -93,19 +91,19 @@ let ndmGraphConf = createGraphConf('svgGraph', stateTransitionTable, "TB", 1, 0.
  **/
 
 function fmt(data) {
- textDescription.textContent = '';
+ textContent.textContent = '';
 
  data['content'].forEach( item => {
 	   p = document.createElement('p');
      p.appendChild(document.createTextNode(item));
-     textDescription.appendChild(p);
+     textContent.appendChild(p);
 	});
 
  data['image'].forEach( item => {
      if(item.length >= 1) { 
         img = document.createElement('img');
         img.src   = item;
-        textDescription.appendChild(img);
+        textContent.appendChild(img);
      }
     });
 }
