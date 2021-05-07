@@ -13,6 +13,12 @@
    const display          = document.getElementById("display");
    const textDescription  = document.getElementById("text-description");
 
+   const left  = document.getElementById("left");
+   const up    = document.getElementById("up");
+   const down  = document.getElementById("down");
+   const right = document.getElementById("right");
+
+
 /**
  *                                  EVENTS
  *
@@ -47,6 +53,12 @@
 	 }
  });
 
+
+
+ left.addEventListener("click", () => ndmMachineService.send('l'))
+ up.addEventListener("click", () => ndmMachineService.send('u'))
+ down.addEventListener("click", () => ndmMachineService.send('d'))
+ right.addEventListener("click", () => ndmMachineService.send('r'))
 
 /**
  *
