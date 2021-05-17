@@ -27,38 +27,38 @@
  document.addEventListener("keydown", function (evt) {
 	 switch(evt.key) {
 		 case 'ArrowDown':
-                       ndmMachineService.send('d')
+                       machineService.send('d')
 			break;
 		 case 'j':
-                       ndmMachineService.send('d')
+                       machineService.send('d')
 			break;
 		 case 'ArrowUp':
-                       ndmMachineService.send('u')
+                       machineService.send('u')
 			break;
                  case 'k':
-                       ndmMachineService.send('u')
+                       machineService.send('u')
 			break;
 		 case 'ArrowLeft':
-                       ndmMachineService.send('l')
+                       machineService.send('l')
 			break;
  		 case 'h':
-                       ndmMachineService.send('l')
+                       machineService.send('l')
 			break;
 		 case 'ArrowRight':
-                       ndmMachineService.send('r')
+                       machineService.send('r')
 			break;
                  case 'l':
-                       ndmMachineService.send('r')
+                       machineService.send('r')
 			break;
 	 }
  });
 
 
 
- left.addEventListener("click", () => ndmMachineService.send('l'))
- up.addEventListener("click", () => ndmMachineService.send('u'))
- down.addEventListener("click", () => ndmMachineService.send('d'))
- right.addEventListener("click", () => ndmMachineService.send('r'))
+ left.addEventListener("click", () => machineService.send('l'))
+ up.addEventListener("click", () => machineService.send('u'))
+ down.addEventListener("click", () => machineService.send('d'))
+ right.addEventListener("click", () => machineService.send('r'))
 
 /**
  *
@@ -81,8 +81,8 @@
  *
  *
  **/
-let ndmGraphConf = createGraphConf('svgGraph', stateTransitionTable, "TB", 1, 0.5);
- const g = createGraph(ndmGraphConf);
+ let graphConf = createGraphConf('svgGraph', stateTransitionTable, "TB", 1, 0.5);
+ const g = createGraph(graphConf);
  renderGraph(g.g, g.data); 
 
 
@@ -96,7 +96,7 @@ function fmt(data) {
  textContent.textContent = '';
 
  data['content'].forEach( item => {
-	   p = document.createElement('p');
+     p = document.createElement('p');
      p.appendChild(document.createTextNode(item));
      textContent.appendChild(p);
 	});
@@ -119,11 +119,11 @@ function fmt(data) {
  *
  **/
 
-   const ndmMachineConf      = createMachineConf(stateTransitionTable);
+   const machineConf      = createMachineConf(stateTransitionTable);
 
-   const ndmMachine          = Machine(ndmMachineConf,options);
+   const machine          = Machine(machineConf,options);
 
-   const ndmMachineService   = interpret(ndmMachine)
+   const machineService   = interpret(machine)
         .onTransition(state => {
           fmt(STATE_DATA[selectTopic.value][state.value])
           showFn(state,g.g);
@@ -131,4 +131,4 @@ function fmt(data) {
     );
 
 
-ndmMachineService.start();
+machineService.start();
