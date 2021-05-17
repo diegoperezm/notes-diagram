@@ -1,4 +1,4 @@
-const STATE_DATA = {
+const NDMCONTENT =  {
     "NDM": {
         "image": [
             ""
@@ -117,4 +117,12 @@ const STATE_DATA = {
             "Some instructions"
         ]
     }
+};
+
+
+const STATE_DATA =  {
+    "ndm":  {
+        ...NDMCONTENT
+    }
 }
+

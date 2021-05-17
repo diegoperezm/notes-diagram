@@ -10,6 +10,8 @@
 
    const display      = document.getElementById("display");
    const textContent  = document.getElementById("text-content");
+   const selectTopic  = document.getElementById("select-topic");
+
 
    const left  = document.getElementById("left");
    const up    = document.getElementById("up");
@@ -123,7 +125,7 @@ function fmt(data) {
 
    const ndmMachineService   = interpret(ndmMachine)
         .onTransition(state => {
-          fmt(STATE_DATA[state.value])
+          fmt(STATE_DATA[selectTopic.value][state.value])
           showFn(state,g.g);
         }
     );
